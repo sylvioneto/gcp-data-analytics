@@ -2,13 +2,11 @@
 
 ## Description
 
-This example demonstrates how to stream events from Pub/sub to BigQuery.
+This example demonstrates how to configure a Serverless data streaming solution using Pub/sub to BigQuery.
 
 Resources created:
-- VPC with firewall rules
-- Cloud Composer
 - BigQuery data sets and tables
-- Pub/sub topic and subscription
+- Pub/sub topic and BQ subscription
 
 ## Deploy
 
