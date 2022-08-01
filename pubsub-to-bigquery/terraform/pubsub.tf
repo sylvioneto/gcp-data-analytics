@@ -19,5 +19,5 @@ resource "google_pubsub_topic" "order_ingest" {
 resource "google_project_iam_member" "pubsub_to_bq_role" {
   project = var.project_id
   role    = "roles/bigquery.dataEditor"
-  member  = "service-${data.google_project.project.number}@gcp-sa-pubsub.iam.gserviceaccount.com"
+  member  = "serviceAccount:service-${data.google_project.project.number}@gcp-sa-pubsub.iam.gserviceaccount.com"
 }
