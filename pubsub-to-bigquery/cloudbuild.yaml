@@ -1,4 +1,14 @@
 steps:
+- id: 'zip cloud function code'
+  name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  entrypoint: 'bash'
+  args:
+  - -c
+  - |
+    apt-get install -y zip
+    cd /workspace/producer
+    zip /workspace/producer_code.zip *
+
 # Terraform
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
@@ -23,23 +33,6 @@ steps:
   - apply
   - -auto-approve
   dir: terraform
-
-# Cloud Function
-- id: 'deploy Cloud Function'
-  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
-  args:
-  - gcloud
-  - functions
-  - deploy
-  - pubsub_producer
-  - --region=us-central1
-  - --source=.
-  - --trigger-http
-  - --runtime=python310
-  - --update-env-vars=PROJECT_ID=$PROJECT_ID
-  - --ingress-settings=all
-  dir: producer
-
 
 options:
   env:

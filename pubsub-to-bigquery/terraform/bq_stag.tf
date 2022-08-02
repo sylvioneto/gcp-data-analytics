@@ -27,7 +27,7 @@ resource "google_bigquery_table" "stag_order_events" {
     "description": "Order ID from the source system"
   },
   {
-    "name": "customer_id",
+    "name": "customer_email",
     "type": "STRING",
     "mode": "NULLABLE",
     "description": "Customer ID from the source system"
