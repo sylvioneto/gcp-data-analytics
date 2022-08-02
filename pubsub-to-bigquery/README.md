@@ -47,6 +47,6 @@ gcloud builds submit . --config cloudbuild.yaml
 ## Destroy
 1. Execute Terraform using Cloud Build
 ```
-cd ./terraform_gcp/composer
-gcloud builds submit ./terraform --config cloudbuild_destroy.yaml
+cd ./gcp-data-analytics/pubsub-to-bigquery
+gcloud builds submit . --config cloudbuild_destroy.yaml
 ```
