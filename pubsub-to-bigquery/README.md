@@ -41,7 +41,7 @@ cd ./gcp-data-analytics/pubsub-to-bigquery
 
 7. Execute Terraform using Cloud Build
 ```
-gcloud builds submit ./terraform --config cloudbuild.yaml
+gcloud builds submit . --config cloudbuild.yaml
 ```
 
 ## Destroy

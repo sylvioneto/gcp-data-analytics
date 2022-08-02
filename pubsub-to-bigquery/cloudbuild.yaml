@@ -1,4 +1,5 @@
 steps:
+# Terraform
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
@@ -8,17 +9,36 @@ steps:
     terraform init \
     -backend-config="bucket=$PROJECT_ID-tf-state" \
     -backend-config="prefix=terraform_gcp/cloud-composer"
+  dir: terraform
       
 - id: 'tf plan'
   name: 'hashicorp/terraform:1.0.0'
   args: 
   - plan
+  dir: terraform
 
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
   args: 
   - apply
   - -auto-approve
+  dir: terraform
+
+# Cloud Function
+- id: 'deploy Cloud Function'
+  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - pubsub_producer
+  - --region=us-central1
+  - --source=.
+  - --trigger-http
+  - --runtime=python310
+  - --update-env-vars=PROJECT_ID=$PROJECT_ID
+  dir: producer
+
 
 options:
   env:
