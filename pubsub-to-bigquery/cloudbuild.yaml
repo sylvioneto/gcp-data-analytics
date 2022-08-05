@@ -1,14 +1,4 @@
 steps:
-- id: 'zip cloud function code'
-  name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-  entrypoint: 'bash'
-  args:
-  - -c
-  - |
-    apt-get install -y zip
-    cd /workspace/producer
-    zip /workspace/producer_code.zip *
-
 # Terraform
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
