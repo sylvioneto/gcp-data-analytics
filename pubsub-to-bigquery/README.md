@@ -23,11 +23,11 @@ gsutil mb gs://$GOOGLE_CLOUD_PROJECT-tf-state
 
 4. Enable the necessary APIs
 ```
-gcloud services enable 
-    bigquery.googleapis.com \
+gcloud services enable bigquery.googleapis.com \
     bigquerydatatransfer.googleapis.com \
     storage.googleapis.com \
     cloudfunctions.googleapis.com \
+    cloudrun.googleapis.com \
     pubsub.googleapis.com
 ```
 
