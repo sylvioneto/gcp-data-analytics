@@ -25,10 +25,10 @@ gsutil mb gs://$GOOGLE_CLOUD_PROJECT-tf-state
 ```
 gcloud services enable bigquery.googleapis.com \
     bigquerydatatransfer.googleapis.com \
-    storage.googleapis.com \
     cloudfunctions.googleapis.com \
-    cloudrun.googleapis.com \
-    pubsub.googleapis.com
+    pubsub.googleapis.com \
+    run.googleapis.com \
+    storage.googleapis.com
 ```
 
 5. Go to [IAM](https://console.cloud.google.com/iam-admin/iam) and add `Editor`, `Network Admin` and `Security Admin` role to the Cloud Build's service account `<PROJECT_NUMBER>@cloudbuild.gserviceaccount.com`.
