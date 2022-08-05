@@ -17,7 +17,7 @@ resource "google_cloudfunctions2_function" "function" {
   name        = "pubsub-producer"
   location    = var.region
   description = "Publish order event messages to Pub/sub"
-  
+
   build_config {
     runtime     = "python310"
     entry_point = "pubsub_producer" # Set the entry point 
@@ -32,7 +32,7 @@ resource "google_cloudfunctions2_function" "function" {
   service_config {
     max_instance_count = 3
     min_instance_count = 1
-    available_memory   = "128M"
+    available_memory   = "128Mi"
     timeout_seconds    = 60
     ingress_settings   = "ALLOW_ALL"
     environment_variables = {
