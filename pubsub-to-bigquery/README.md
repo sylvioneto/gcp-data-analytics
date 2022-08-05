@@ -53,6 +53,8 @@ gcloud builds submit . --config cloudbuild_destroy.yaml
 
 
 ## Load Test
+If you want to run a load test, please follow the instructions below.
+
 1. Set GCP_TOKEN env var
 ```
 export GCP_TOKEN=$(gcloud auth print-identity-token)
