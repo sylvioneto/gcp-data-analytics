@@ -4,7 +4,7 @@ resource "google_cloud_run_service" "default" {
   template {
     spec {
       containers {
-        image = "us-central1-docker.pkg.dev/syl-data-analytics/docker-repo/gcp-ingest-api:074ffcdd-b033-46b5-b18d-24f5f96c2d18"
+        image = "us-central1-docker.pkg.dev/syl-data-analytics/docker-repo/gcp-ingest-api:39b804c3-6507-4c26-ab48-1a4562998cb8"
         env {
           name  = "PROJECT_ID"
           value = var.project_id
