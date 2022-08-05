@@ -1,6 +1,9 @@
 resource "google_cloud_run_service" "default" {
   name     = "order-event-ingest-api"
   location = var.region
+  metadata {
+    labels = local.resource_labels
+  }
   template {
     spec {
       containers {
