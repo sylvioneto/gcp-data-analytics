@@ -31,7 +31,7 @@ resource "google_cloudfunctions2_function" "function" {
 
   service_config {
     max_instance_count = 3
-    min_instance_count = 1
+    min_instance_count = 0
     available_memory   = "128Mi"
     timeout_seconds    = 60
     ingress_settings   = "ALLOW_ALL"
