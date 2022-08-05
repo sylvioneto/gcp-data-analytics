@@ -12,7 +12,7 @@ resource "google_project_iam_member" "scheduler_to_function" {
 
 resource "google_project_iam_member" "scheduler_to_run" {
   project = var.project_id
-  role    = "roles/roles/run.invoker"
+  role    = "roles/run.invoker"
   member  = "serviceAccount:${var.project_id}@appspot.gserviceaccount.com"
 }
 
