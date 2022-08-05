@@ -50,3 +50,17 @@ gcloud builds submit . --config cloudbuild.yaml
 cd ./gcp-data-analytics/pubsub-to-bigquery
 gcloud builds submit . --config cloudbuild_destroy.yaml
 ```
+
+
+## Load Test
+1. Set GCP_TOKEN env var
+```
+export GCP_TOKEN=$(gcloud auth print-identity-token)
+```
+
+2. Run locust with your Cloud Run Service URL as target, for example:
+```
+locust -f locustfile.py --headless -u 100 -r 10 \
+    --run-time 30m \
+    -H https://order-event-ingest-api-myuqqqnhdq-ue.a.run.app 
+```
