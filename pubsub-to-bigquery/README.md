@@ -8,6 +8,12 @@ Resources created:
 - BigQuery data sets and tables
 - Pub/sub topic and BQ subscription
 
+## Pre-req
+The ingest API uses private docker image, so before running the terraform, make sure you:
+1. Build [this docker image](https://github.com/sylvioneto/gcp-ingest-api) and store it into your project
+2. Replace the image URL in [cloud_run.tf](./terraform/cloud_run.tf#L10)
+
+
 ## Deploy
 
 1. Create a new project and select it
