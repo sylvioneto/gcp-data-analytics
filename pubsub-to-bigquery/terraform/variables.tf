@@ -21,5 +21,5 @@ variable "region" {
 
 variable "gcp_ingest_api_image" {
   description = "Container image to use on Cloud Run ingest API"
-  default     = "us-central1-docker.pkg.dev/syl-data-analytics/docker-repo/gcp-ingest-api:8a3dc796-40f8-407f-907a-5fb650e4d356"
+  default     = "us-central1-docker.pkg.dev/syl-data-analytics/docker-repo/gcp-ingest-api:3bb2827c-1681-4395-a14a-f1043630aefa"
 }
