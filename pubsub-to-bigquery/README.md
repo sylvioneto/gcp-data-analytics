@@ -66,7 +66,14 @@ If you want to run a load test, please follow the instructions below.
 export GCP_TOKEN=$(gcloud auth print-identity-token)
 ```
 
-2. Run locust with your Cloud Run Service URL as target, for example:
+2. Create a python virtual env and activate it
+```
+python3 -m virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+3. Run locust with your Cloud Run Service URL as target, for example:
 ```
 locust -f locustfile.py --headless -u 100 -r 10 \
     --run-time 30m \
