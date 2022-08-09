@@ -5,7 +5,7 @@ resource "google_cloud_run_service" "default" {
     labels = local.resource_labels
     annotations = {
       "autoscaling.knative.dev/minScale" = "1"
-      "autoscaling.knative.dev/minScale" = "10"
+      "autoscaling.knative.dev/maxScale" = "10"
     }
   }
   template {
