@@ -82,5 +82,5 @@ pip install -r requirements.txt
 ```
 locust -f locustfile.py --headless -u 100 -r 10 \
     --run-time 30m \
-    -H https://ingest-api-myuqqqnhdq-ue.a.run.app/?entity=order-event
+    -H https://ingest-api-myuq-ue.a.run.app/
 ```
