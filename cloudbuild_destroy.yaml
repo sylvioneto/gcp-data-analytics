@@ -1,5 +1,4 @@
 steps:
-# Terraform
 - id: 'tf init'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
@@ -8,29 +7,23 @@ steps:
   - | 
     terraform init \
     -backend-config="bucket=$PROJECT_ID-tf-state" \
-    -backend-config="prefix=terraform_gcp/cloud-composer"
-  dir: terraform
-      
-- id: 'tf plan'
-  name: 'hashicorp/terraform:1.0.0'
-  args: 
-  - plan
+    -backend-config="prefix=streaming-data"
   dir: terraform
 
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
   args: 
-  - apply
+  - destroy
   - -auto-approve
   dir: terraform
 
 options:
   env:
     - TF_VAR_project_id=$PROJECT_ID
+
 tags:
   - terraform
-  - data-analytics
-  - pubsub-to-bigquery
-  - plan-apply
+  - streaming-data
+  - destroy
 
 timeout: 3600s

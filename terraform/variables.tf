@@ -1,10 +1,9 @@
 locals {
   resource_labels = {
     terraform = "true"
-    app       = "pubsub-to-bigquery"
-    purpose   = "demo"
+    app       = "ingest-api"
     env       = "sandbox"
-    repo      = "gcp-data-analytics"
+    repo      = "gcp-streaming-data"
   }
 }
 

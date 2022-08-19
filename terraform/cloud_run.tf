@@ -1,13 +1,7 @@
 resource "google_cloud_run_service" "default" {
-  name     = "order-event-ingest-api"
+  name     = "ingest-api"
   location = var.region
-  metadata {
-    labels = local.resource_labels
-    annotations = {
-      "autoscaling.knative.dev/minScale" = "1"
-      "autoscaling.knative.dev/maxScale" = "10"
-    }
-  }
+  
   template {
     spec {
       containers {
@@ -18,15 +12,20 @@ resource "google_cloud_run_service" "default" {
         }
         env {
           name  = "TOPIC_ID"
-          value = google_pubsub_topic.order_ingest.name
-        }
-        env {
-          name  = "SOURCE_SYSTEM"
-          value = "order-management"
+          value = google_pubsub_topic.ingest_api.name
         }
       }
     }
+
+    metadata {
+      annotations = {
+        "autoscaling.knative.dev/minScale" = "1"
+        "autoscaling.knative.dev/maxScale" = "10"
+      }
+      labels   = local.resource_labels
+    }
   }
+
   traffic {
     percent         = 100
     latest_revision = true
