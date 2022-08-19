@@ -72,6 +72,7 @@ export GCP_TOKEN=$(gcloud auth print-identity-token)
 
 2. Create a python virtual env and activate it
 ```
+cd load_test
 python3 -m virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -81,5 +82,5 @@ pip install -r requirements.txt
 ```
 locust -f locustfile.py --headless -u 100 -r 10 \
     --run-time 30m \
-    -H https://order-event-ingest-api-myuqqqnhdq-ue.a.run.app 
+    -H https://ingest-api-myuqqqnhdq-ue.a.run.app/?entity=order-event
 ```
