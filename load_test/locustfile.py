@@ -26,5 +26,5 @@ class IngestAPIUser(HttpUser):
             }
         data = json.dumps(order).encode("utf-8")
         self.client.headers = {'Authorization': "Bearer " + gcp_token}
-        self.client.post(f"/", data=data)
+        self.client.post(f"/?entity=order-event", data=data)
         
