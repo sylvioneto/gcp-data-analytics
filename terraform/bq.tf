@@ -8,7 +8,7 @@ resource "google_bigquery_dataset" "raw" {
 resource "google_bigquery_table" "raw_order_events" {
   dataset_id          = google_bigquery_dataset.raw.dataset_id
   table_id            = "order_event"
-  description         = "Store order events streamed from order-events-to-bigquery subscription"
+  description         = "Store order events streamed received by the Ingest API"
   deletion_protection = false
 
   time_partitioning {
