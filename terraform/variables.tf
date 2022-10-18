@@ -9,13 +9,12 @@ locals {
 
 variable "project_id" {
   description = "Project ID"
-  default     = null
+  default     = "Google Cloud Project ID"
 }
 
 variable "region" {
   type        = string
   description = "GCP region"
-  default     = "us-east1"
 }
 
 variable "gcp_ingest_api_image" {
