@@ -1,2 +1,2 @@
 CONGRATS!!!!!!!  
-You have configured a project and created 
+You have successfully deployed this solution
