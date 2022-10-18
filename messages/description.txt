@@ -1,0 +1,4 @@
+This process will configure and create the following: 
+    * BigQuery data sets and tables
+    * Pub/Sub topic
+    * Pub/Sub BigQuery subscription
