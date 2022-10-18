@@ -8,7 +8,7 @@ locals {
 }
 
 variable "project_id" {
-  description = "GCP Project ID"
+  description = "Project ID"
   default     = null
 }
 

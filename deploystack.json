@@ -1,0 +1,13 @@
+{
+    "title": "Google Cloud Streaming Data",
+    "duration": 5,
+    "collect_project": true,
+    "collect_region": true,
+    "region_default": "us-central1",
+    "collect_zone": false,
+    "hard_settings": {
+      "basename": "streaming-data"
+    },
+    "path_terraform": "terraform"
+  }
+  

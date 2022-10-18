@@ -1,7 +1,4 @@
 terraform {
-  backend "gcs" {
-  }
-
   required_providers {
     google = {
       version = "~> 4.32"
