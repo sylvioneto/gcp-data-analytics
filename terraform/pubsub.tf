@@ -13,6 +13,10 @@ resource "google_pubsub_subscription" "order_to_bq_sub" {
     table          = "${data.google_project.project.name}.${google_bigquery_dataset.raw.dataset_id}.${google_bigquery_table.raw_order_events.table_id}"
     write_metadata = true
   }
+  
+  depends_on = [
+    google_project_iam_member.pubsub_to_bq_role
+  ]
 }
 
 resource "google_pubsub_subscription" "unknown_to_bq_sub" {
@@ -25,5 +29,9 @@ resource "google_pubsub_subscription" "unknown_to_bq_sub" {
     table          = "${data.google_project.project.name}.${google_bigquery_dataset.raw.dataset_id}.${google_bigquery_table.raw_order_events.table_id}"
     write_metadata = true
   }
+
+  depends_on = [
+    google_project_iam_member.pubsub_to_bq_role
+  ]
 }
 
