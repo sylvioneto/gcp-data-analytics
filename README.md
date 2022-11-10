@@ -2,7 +2,7 @@
 
 ## Description
 
-This example demonstrates how to stream data from your application to BigQuery using Pub/sub.
+This example demonstrates how to stream data from your application to BigQuery using Pub/Sub.
 
 Resources created:
 - BigQuery data sets and tables
